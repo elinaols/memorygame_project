@@ -1,0 +1,104 @@
+/*
+Elina Olsson
+Examinationsuppgift - projektet
+*/
+
+/*
+En enkel CSS-recet stilar upp detta memoryspel som jag ska skapa, där jag använder mig av en border-box,
+och där margin och padding sätts till 0.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*
+Wrapper som omsluter hela mitt innehåll på sidan, där flex tillsammans med justify-content och align-items hjälper mig att centrera 
+allt innehåll på sidan. Margin centrerar wrappern i sidled.
+*/
+.wrapper {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    flex: 1;
+}
+
+/* 
+Box som omsluter och sätter stil till headern och main, där rubrik, knapp och spelplan finns.
+*/
+#box {
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-areas: 
+    'head head'
+    'box box';
+    padding: 30px 0;
+}
+
+/* Sätter en flexbox för att ha möjlighet till att bland annat justerar mellanrummet mellan rubriken och knappen. */
+header {
+    grid-area: head;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    grid-area: text;
+    font-size: 3.8rem;
+    color: rgb(58, 58, 58); 
+    font-weight: bolder;
+}
+
+button {
+    grid-area: button;
+    height: 3rem;
+    width: 6rem;
+    border: 0;
+    background-color: rgb(58, 58, 58); 
+    border-radius: 5%;
+    font-size: 1.2rem;
+    color: white;
+}
+
+button:hover {
+    background-color: #ff1212;
+}
+
+/* 
+Sätter displayen som flexbox för att centrera allt innehåll samt använda flex-wrap för att försvåra lite till för
+användaren när denna lyckats hitta fler och fler par. Genom att när ett par tas bort drar boxarna ihop sig.
+*/
+main {
+    grid-area: box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    padding: 1rem 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#memoryLista div:hover, img:hover {
+    box-shadow: 5px 5px 10px #7596F9;
+}
+
+#memoryLista div:active, img:active {
+    box-shadow: 5px 5px 10px #068045;
+}
+
+#memoryLista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
