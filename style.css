@@ -82,15 +82,15 @@ main {
     align-items: center;
 }
 
-#memoryLista div:hover, img:hover {
+#memoryList div:hover, img:hover {
     box-shadow: 5px 5px 10px #7596F9;
 }
 
-#memoryLista div:active, img:active {
+#memoryList div:active, img:active {
     box-shadow: 5px 5px 10px #068045;
 }
 
-#memoryLista {
+#memoryList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
