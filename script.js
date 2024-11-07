@@ -3,7 +3,7 @@ let namespace = {};
 
 // Skapar en variabel backgroundImage till namespace som hämtar elementet, som omsluter alla element från html-dokumentet.
 namespace.backgroundImage = document.querySelector(".wrapper");
-// Ger en backgroundImage genom att ange sökvägen till bilden med hjälp av url. Kod hämtad från https://linuxhint.com/change-background-image-javascript/.
+// Ger en backgroundImage genom att ange sökvägen till bilden med hjälp av url. 
 namespace.backgroundImage.style.backgroundImage = "url('bilder/savannah.jpg')";
 // backgroundSize och värdet 'cover' hjälper till att fylla hela utrymmet för klassen wrapper i html-dokumentet.
 namespace.backgroundImage.style.backgroundSize = "cover";
@@ -56,10 +56,7 @@ const createPicture = () => {
     while (listOfRandomNumbers.length != allCards.length) {
         // Math.floor avrundar tal neråt och tillsammans med Math.random genereras ett slumpat tal till variabeln randomPosition.
         let randomPosition = Math.floor(Math.random() * allCards.length);
-        /* 
-        Kollar om listOfRandomNumbers redan har detta slumpade nummer, i så fall vill jag inte lägga in det till listan.
-        Fått inspiration från denna sida: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes 
-        */
+        //Kollar om listOfRandomNumbers redan har detta slumpade nummer, i så fall vill jag inte lägga in det till listan.
         if (listOfRandomNumbers.includes(randomPosition)) {
             // Continue gör att snurran går tillbaka och slumpar ut ett nytt tal.
             continue;
@@ -71,10 +68,7 @@ const createPicture = () => {
     for (let i = 0; i < listOfRandomNumbers.length; i++) {
         // Skapa en variabel som sparar en slumpad position från listOfRandomNumbers.
         let randomSpot = listOfRandomNumbers[i];
-        /*
-        Skapar en ny bild till variabeln namespace.newPicture genom new Image och anger dess bredd och höjd inom paranteserna.
-        Följande kod som skapar bild är hämtad från https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image 
-        */
+        //Skapar en ny bild till variabeln namespace.newPicture genom new Image och anger dess bredd och höjd inom paranteserna.
         namespace.newPicture = new Image(175, 250);
         /*
         Då listOfRandomNumbers har längd 12 och namespace.pictureList längd 6, delar jag randomSpot med 2 och avrundar det neråt med Math.floor för att 
@@ -101,9 +95,6 @@ let correctPairsCount = 0;
 
 /*
 Går igenom alla boxar, en för en, med forEach(), och sedan kör en addeventListener på varje valt card som användaren klickat på.
-Inspiration hämtad från https://www.freecodecamp.org/news/javascript-foreach-js-array-for-each-example/,
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach 
-och från https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/ 
 */
 allCards.forEach((card) => {
     card.addEventListener("click", () => {
@@ -185,7 +176,6 @@ allCards.forEach((card) => {
             congratulate();
             /*
             Laddar om webbläsarfönstret så man kan starta om spelet på nytt.
-            Hämtad från https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/.
             */
             window.location.reload();
         }
@@ -208,7 +198,6 @@ const startOver = document.querySelector("button");
 startOver.addEventListener("click", () => {
     /*
     Laddar om fönstret så användaren kan starta om spelet på nytt.
-    Kod hämtad från https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/.
     */
     window.location.reload();
 });
