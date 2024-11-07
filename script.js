@@ -37,7 +37,7 @@ const createBox = () => {
         // Skapar en svart bakgrundsfärg med style och backgroundColor.
         namespace.newBox.style.backgroundColor = "black";
         // Skapar en bredd till div-elementet på 250px med width
-        namespace.newBox.style.width = "175px";
+        namespace.newBox.style.width = "175px"; 
         // Skapar en höjd på 325px med height
         namespace.newBox.style.height = "250px";
         // Lägger till alla nya boxar till gameBoarden i html-dokumentet.
