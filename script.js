@@ -35,13 +35,25 @@ const createBox = () => {
         // Skapar ett nytt div-element till html-dokumentet med createElement.
         namespace.newBox = document.createElement("div");
         // Skapar en svart bakgrundsfärg med style och backgroundColor.
-        namespace.newBox.style.backgroundColor = "black";
+        namespace.newBox.style.backgroundImage = "url('bilder/card.webp')";
         // Skapar en bredd till div-elementet på 250px med width
         namespace.newBox.style.width = "175px"; 
         // Skapar en höjd på 325px med height
         namespace.newBox.style.height = "250px";
+        namespace.newBox.style.borderRadius = "10px";
+        namespace.newBox.style.backgroundSize = "cover"
+        namespace.newBox.style.backgroundPosition = "center"
         // Lägger till alla nya boxar till gameBoarden i html-dokumentet.
         gameBoard.appendChild(namespace.newBox);
+        /*
+        // Skapar ett nytt div-element till html-dokumentet med createElement.
+        namespace.newBox = document.createElement("div");
+        namespace.newPicture = new Image(175, 250);
+        namespace.newPicture.src = "bilder/card.webp";
+        namespace.newBox.appendChild(namespace.newPicture)
+        // Lägger till alla nya boxar till gameBoarden i html-dokumentet.
+        gameBoard.appendChild(namespace.newBox); 
+        */
     }
 };
 
@@ -78,6 +90,7 @@ const createPicture = () => {
             namespace.pictureList[Math.floor(randomSpot / 2)];
         // Sätter bildernas synlighet till hidden.
         namespace.newPicture.style.visibility = "hidden";
+        namespace.newPicture.style.borderRadius = "10px";
         // Går igenom alla tidigare skapta boxar för att lägga till, med appendChild(), en bild i vardera box.
         allCards[i].appendChild(namespace.newPicture);
     }
